@@ -10,7 +10,8 @@
     "lint": "ng lint",
 		"e2e": "ng e2e",
 		"ionic:serve:before": "node ./env.config.js",
-		"ionic:build:before": "node ./env.config.js"
+		"ionic:build:before": "node ./env.config.js",
+    "build": "ionic build --configuration =staging" 
   },
   "private": true,
   "dependencies": {
