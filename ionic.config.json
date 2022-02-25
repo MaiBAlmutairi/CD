@@ -1,0 +1,8 @@
+{
+  "name": "Foodics Pay Merchant App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "dc99096e",
+  "hooks": {}
