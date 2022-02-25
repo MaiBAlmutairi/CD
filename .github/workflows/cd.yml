@@ -36,17 +36,17 @@ jobs:
                   - uses: actions/setup-node@v1
                     with:
                      node-version: 14.x
-                 - uses: actions/checkout@v2
-                   with:
-                    fetch-depth: 0
-               - name: Restore Dependency Cache
-                 uses: actions/cache@v1
-                 with:
-                  path: ~/.npm
-                  key: ${{ runner.OS }}-dependency-cache-${{ hashFiles('**/package.json') }}
-               - run: npm install
-               - run: npm run bootstrap
-               - run: npm run publish:ci -- --yes
+                  - uses: actions/checkout@v2
+                    with:
+                     fetch-depth: 0
+                  - name: Restore Dependency Cache
+                    uses: actions/cache@v1
+                    with:
+                     path: ~/.npm
+                     key: ${{ runner.OS }}-dependency-cache-${{ hashFiles('**/package.json') }}
+                  - run: npm install
+                  - run: npm run bootstrap
+                  - run: npm run publish:ci -- --yes
                    
                
                 
