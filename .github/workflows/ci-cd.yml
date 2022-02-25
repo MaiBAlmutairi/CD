@@ -47,8 +47,10 @@ jobs:
                       run: npm install
                     - name: Build
                       run: npm run build
-                    - name: ng build
-                      run: ng build
+                    - name: Setup Ionic
+                      uses: coturiv/setup-ionic@v1.0.4
+                    - name: ionic build 
+                      run: ionic build --configuration =staging 
                     - name: Run Tests
                       run: npm run test
                    
