@@ -48,8 +48,7 @@ jobs:
                     - name: Build
                       run: npm run build
                     - name: Setup Ionic
-                     
-                      
+                       
                     - name: Run Tests
                       run: npm run test
                    
