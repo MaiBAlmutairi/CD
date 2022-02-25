@@ -48,7 +48,7 @@ jobs:
                     - name: Build
                       run: npm run build
                     - name: Build2
-                      run: build-web.bat staging
+                      run: ionic build --configuration=staging
                     - name: Run Tests
                       run: npm run test
                    
