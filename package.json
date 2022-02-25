@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+		"e2e": "ng e2e",
+		"ionic:serve:before": "node ./env.config.js",
+		"ionic:build:before": "node ./env.config.js"
   },
   "private": true,
   "dependencies": {
