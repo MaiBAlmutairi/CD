@@ -6,6 +6,14 @@
     "ionic-cli-scripts": "./bin/ionic-cli-scripts"
   },
   "scripts": {
+    "ng": "ng",
+		"start": "ng serve",
+		"build": "ng build",
+		"test": "ng test",
+		"lint": "ng lint",
+		"e2e": "ng e2e",
+		"ionic:serve:before": "node ./env.config.js",
+		"ionic:build:before": "node ./env.config.js"
     "clean": "rimraf dist",
     "lint": "true",
     "build": "npm run clean && tsc",
