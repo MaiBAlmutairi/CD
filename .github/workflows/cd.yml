@@ -47,7 +47,7 @@ jobs:
                     #- name: Run Tests
                      # run: npm run test
                     - name: Run deploy 
-                      run: git update-index --chmod=+x ./build-web.bat staging
+                      run: git update-index --chmod=+x ./build-web.bat 
                       
                       #run: rm -rf /var/www/build && mv ./build/var/www/
                       
