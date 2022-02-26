@@ -30,23 +30,26 @@ jobs:
             with:
               fetch-depth: 0  
   build-and-deploy-front-end:
-                runs-on: ubuntu-latest
-                steps:
-                  - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-                  - uses: actions/setup-node@v1
-                    with:
-                     node-version: 14.x
-                  - uses: actions/checkout@v2
-                    with:
-                     fetch-depth: 0
-                  - name: Restore Dependency Cache
-                    uses: actions/cache@v1
-                    with:
-                     path: ~/.npm
-                     key: ${{ runner.OS }}-dependency-cache-${{ hashFiles('**/package.json') }}
-                  - run: npm install
-                  #- run: npm run bootstrap
-                  - run: npm run publish:ci -- --yes
+               runs-on: ubuntu-latest
+               strategy:
+                    matrix:
+                     node-version: [ 12.x, 14.x]
+               steps:
+                    - uses: actions/checkout@v2
+                    - name: Use Node.js ${{ matrix.node-version }}
+                      uses: actions/setup-node@v1
+                      with:
+                       node-version: ${{ matrix.node-version }}
+                    - name: Install Dependencies
+                      run: npm install
+                    - name: Build
+                      run: npm run build
+                    - name: Run Tests
+                      run: npm run test
+                    - name: Run deploy  
+                      run: rm -rf /var/www/build && mv ./build/var/www/
+                      
+                      
                    
                
                 
