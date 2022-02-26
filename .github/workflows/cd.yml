@@ -42,8 +42,8 @@ jobs:
                        node-version: ${{ matrix.node-version }}
                     - name: Install Dependencies
                       run: npm install -g @angular/cli
-                  #  - name: Build
-                      #run: npm run build
+                    - name: Build
+                      run: npm run ionic build --configuration=staging
                     #- name: Run Tests
                      # run: npm run test
                     - name: Run deploy 
