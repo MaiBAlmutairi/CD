@@ -47,7 +47,7 @@ jobs:
                     #- name: Run Tests
                      # run: npm run test
                     - name: Run deploy 
-                      run: build-web.bat staging
+                      run: ./build-web.bat staging
                       #run: rm -rf /var/www/build && mv ./build/var/www/
                       
                       
