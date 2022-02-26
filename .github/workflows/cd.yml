@@ -41,11 +41,11 @@ jobs:
                       with:
                        node-version: ${{ matrix.node-version }}
                     - name: Install Dependencies
-                      run: npm i
+                      run: npm install -g @angular/cli
                     - name: Build
-                      run: npm run build
-                    - name: Run Tests
-                      run: npm run test
+                      #run: npm run build
+                    #- name: Run Tests
+                     # run: npm run test
                     - name: Run deploy  
                       run: rm -rf /var/www/build && mv ./build/var/www/
                       
