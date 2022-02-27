@@ -47,7 +47,7 @@ jobs:
                       run : npm install -g ionic
                     - run: |
                          npm install 
-                         nohup bash -c "ionic serve --dev-logger-port 8100 --configuration=staging -b 2>&1 &" && sleep 9
+                         nohup bash -c "ionic build port 8100 --configuration=staging -b 2>&1 &" && sleep 9
                     #- name: Build
                      # run: npm run ionic build --configuration=staging
                     #- name: Run Tests
