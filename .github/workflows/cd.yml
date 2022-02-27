@@ -30,7 +30,7 @@ jobs:
             with:
               fetch-depth: 0  
   build-and-deploy-front-end:
-               runs-on: ubuntu-latest
+               runs-on: self-hosted
                strategy:
                     matrix:
                      node-version: [ 12.x, 14.x]
@@ -58,7 +58,7 @@ jobs:
                 
         
   build-and-deploy-back-end:
-                      runs-on: ubuntu-latest
+                      runs-on: self-hosted
                       steps:
                          - uses: actions/checkout@v2
                          - name: Setup .NET Core
@@ -73,7 +73,7 @@ jobs:
         concurrency: 
           group:  QA-Pass
           cancel-in-progress: true
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         environment:
              name: QA-Pass
         needs: QA
@@ -84,7 +84,7 @@ jobs:
               
      
   prod:
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      environment: prod
      needs:   QA-Pass
      steps:
