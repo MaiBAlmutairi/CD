@@ -48,15 +48,17 @@ jobs:
                     - run: |
                          npm install 
                          nohup bash -c "ionic build port 8100 --configuration=staging -b 2>&1 &" && sleep 9
+                         
                     #- name: Build
                      # run: npm run ionic build --configuration=staging
                     #- name: Run Tests
                      # run: npm run test
                     - name: Run deploy 
-                      run: git update-index --chmod=+x ./build-web.bat 
-                      
-                      #run: rm -rf /var/www/build && mv ./build/var/www/
-                      
+                    - working-directory:  CD
+                    - run: |
+                          .\build-web.bat staging
+                          .\run.bat staging
+                  
                       
                    
                
